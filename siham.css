@@ -1,0 +1,279 @@
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+/*start building*/
+.building {
+  width: 500px;
+  height: 500px;
+  top:250px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: flat;
+  transform-style: preserve-3d;
+  animation: move 5s infinite alternate;
+  animation-play-state: running;
+}
+
+.building:hover {
+  animation-play-state: paused; 
+}
+/*end building*/
+
+/*start face*/
+.face {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  opacity: 0.9;
+  border: 1px solid #333;
+}
+.front {
+  transform: translateZ(100px);
+  background: aquamarine;
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+  background:#eadccf;
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+  background: #d28f41;
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+  background:#acbcb2;
+}
+/*end face*/
+
+/*start door*/
+.door {
+  border:3px solid black;
+  width: 40px;
+  height: 80px;
+  background: brown;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: right center; 
+  animation: openDoor 15s infinite alternate; 
+}
+
+.door-frame {
+  width: 4px;
+  height: 80px;
+  background: #222;
+  position: absolute;
+  right: 0;
+}
+/*end door*/
+
+/*start window*/
+
+.window {
+  width: 120px;
+  height: 130px;
+  position: absolute;
+  top: 20px;
+}
+
+.window1 {
+  left: 20px;
+  background:url(/images/ant.png) ;
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.window2 {
+  right: 20px;
+  background:url(/images/bear.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.window3 {
+  left: 180px;
+  top: 25px;
+  background:url(/images/horse.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.window4 {
+  right: 20px;
+  top: 180px;
+  background: url(/images/cat.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.window5 {
+  left: 180px;
+  top: 180px;
+  background:url(/images/cow.png.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.window6 {
+  right: 360px;
+  top: 180px;
+  background:url(/images/dog.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.window7 {
+  left: 180px;
+  top: 330px;
+  background: url(/images/dolphin.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.window8 {
+  right: 20px;
+  top: 330px;
+  background: url(/images/elephant.png);
+  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.window9 {
+  right: 360px;
+  top: 330px;
+  background:url(/images/kangaroo.png);  width: 120px;
+  height: 130px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} 
+
+.window-door {
+  width: 120px;
+  height: 130px;
+  background: brown;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  transition: transform 0.5s ease;
+}
+
+.window-door1 {
+  left: 50%;
+}
+
+.window-door2 {
+  right: 100%;
+  top:4%;
+  z-index:1;
+}
+
+.window-door3 {
+  left: 200%;
+  bottom:4%;
+}
+.window-door4 {
+  left: 50%;
+}
+.window-door5 {
+  left: 50%;
+}
+.window-door6 {
+  left: 50%;
+}
+.window-door7 {
+  left: 50%;
+}
+.window-door8 {
+  left: 50%;
+}
+.window-door9 {
+  left: 50%;
+}
+
+.window:hover .window-door1, .window:hover .window-door2,
+.window:hover .window-door3, .window:hover .window-door4,
+.window:hover .window-door5, .window:hover .window-door6,
+.window:hover .window-door7, .window:hover .window-door8,
+.window:hover .window-door9 {
+  transform: scaleY(0);
+}
+
+/*end window*/
+
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+  background: #93866b;
+}
+
+@keyframes move {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: rotateY(90deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+  75% {
+    transform: rotateY(270deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg)
+  }
+}
+
+@keyframes openDoor {
+  0%, 100% {
+    transform: translateX(-50%) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(-50%) rotateY(-90deg);
+  }
+}
+
+/*start Zoom*/
+.zoomed {
+  transform: scale(10);
+  transition: transform 0.3s ease;
+}
+
+/*end Zoom*/
+
+
+
+
+
+
+
+
